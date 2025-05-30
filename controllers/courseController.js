@@ -24,7 +24,7 @@ module.exports = {
             let allCourses = await Course.findAll({
                 include: [{
                     model: Student,
-                    as: 'student',  // Correct alias 'student' (Ensure it's consistent with the model)
+                    as: 'students',  // Use the correct alias: 'students'
                     attributes: ['firstname', 'lastname']  // Include associated student data
                 }]
             });
@@ -42,7 +42,7 @@ module.exports = {
                 where: { course_id: id },
                 include: [{
                     model: Student,
-                    as: 'student',  // Correct alias 'student'
+                    as: 'students',  // Use the correct alias: 'students'
                     attributes: ['firstname', 'lastname']  // Include associated student data
                 }]
             });

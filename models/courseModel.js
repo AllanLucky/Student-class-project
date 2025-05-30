@@ -11,14 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       },
   });
 
-  // Association: Course has one Student
-  Course.associate = (models) => {
-      Course.hasOne(models.Student, {
-          foreignKey: 'course_id',  // Foreign key in Student model
-          as: 'student',
-      });
-  };
-
+  
   return Course;
 };
 

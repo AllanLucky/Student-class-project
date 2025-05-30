@@ -5,9 +5,19 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        firstname: DataTypes.STRING,
-        lastname: DataTypes.STRING,
-        gender: DataTypes.STRING,
+        firstname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        lastname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        gender: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+    
     });
 
     return Student;

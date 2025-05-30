@@ -34,8 +34,10 @@ db.courses = require('./courseModel')(sequelize, DataTypes);
 db.users = require('./authModel.js')(sequelize, DataTypes);
 
 // Associations
+
 db.students.belongsTo(db.courses, { foreignKey: 'course_id', as: 'course' });
-  // A Student belongs to one Course
+db.courses.hasMany(db.students, { foreignKey: 'course_id', as: 'students' });
+ // A Student belongs to one Course
 
 // Sync the models with the database
 db.sequelize.sync({ force: false })
